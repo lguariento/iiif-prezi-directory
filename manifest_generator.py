@@ -45,7 +45,7 @@ for ms in sheet.iter_rows(min_row=3, values_only=True):
         fac.set_base_image_uri("https://iiif.gla.ac.uk/iiif/" + ms[1] + "/images")
         print('Getting data for ' + ms[0])
         for fn in sorted(os.listdir(image_dir)):
-            if fn.endswith(".jp2"): # Makes sure that if picks up only images
+            if fn.endswith(".jp2"): # Makes sure that it picks up only images
                 ident = fn[:-4]
                 cvs_title = ident.replace("_", " ").title().split(' ')[-1]
                 cvs = seq.canvas(ident=ident, label=cvs_title)
